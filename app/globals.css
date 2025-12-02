@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --background: 0 0% 100%;
+    --foreground: 180 5% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 180 5% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 5% 10%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 142 20% 96%;
+    --muted-foreground: 142 10% 45%;
+    --accent: 142 30% 88%;
+    --accent-foreground: 142 64% 20%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 142 20% 90%;
+    --input: 142 20% 90%;
+    --ring: 158 64% 52%;
+    --chart-1: 158 64% 52%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 173 58% 39%;
+    --chart-4: 164 86% 57%;
+    --chart-5: 151 55% 42%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 142 10% 26%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 20% 95%;
+    --sidebar-accent-foreground: 142 64% 20%;
+    --sidebar-border: 142 20% 91%;
+    --sidebar-ring: 158 64% 52%;
+  }
+  .dark {
+    --background: 180 10% 5%;
+    --foreground: 142 20% 95%;
+    --card: 180 10% 8%;
+    --card-foreground: 142 20% 95%;
+    --popover: 180 10% 8%;
+    --popover-foreground: 142 20% 95%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 50% 25%;
+    --secondary-foreground: 142 20% 95%;
+    --muted: 142 15% 15%;
+    --muted-foreground: 142 15% 65%;
+    --accent: 142 30% 18%;
+    --accent-foreground: 142 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 142 15% 18%;
+    --input: 142 15% 18%;
+    --ring: 158 64% 52%;
+    --chart-1: 158 64% 52%;
+    --chart-2: 142 76% 36%;
+    --chart-3: 173 58% 39%;
+    --chart-4: 164 86% 57%;
+    --chart-5: 151 55% 42%;
+    --sidebar-background: 180 10% 8%;
+    --sidebar-foreground: 142 20% 90%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 20% 15%;
+    --sidebar-accent-foreground: 142 20% 90%;
+    --sidebar-border: 142 15% 18%;
+    --sidebar-ring: 158 64% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+  .rock-salt {
+    font-family: 'Rock Salt', cursive;
+  }
+
+  .size-15 {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Theme Palettes */
+  .theme-volcano {
+    --primary: 14 100% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 14 100% 57%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-nightowl {
+    --primary: 207 90% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 286 85% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 171 100% 41%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-skyblue {
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 204 96% 27%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 186 100% 69%;
+    --accent-foreground: 0 0% 0%;
+  }
+
+  .theme-sunset {
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 25 95% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 291 64% 42%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-forest {
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 84 68% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 173 58% 39%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-ocean {
+    --primary: 212 100% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 188 78% 41%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-lavender {
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 291 47% 51%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 280 67% 80%;
+    --accent-foreground: 0 0% 0%;
+  }
+
+  .theme-rose {
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 346 77% 49%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 350 89% 60%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-amber {
+    --primary: 32 95% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 0%;
+  }
+
+  .theme-mint {
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 168 76% 42%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 160 84% 39%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-crimson {
+    --primary: 348 83% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 356 75% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-indigo {
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 243 75% 59%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 249 95% 63%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  .theme-emerald {
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 76% 36%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 152 60% 53%;
+    --accent-foreground: 0 0% 0%;
+  }
+
+  .theme-coral {
+    --primary: 16 100% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 14 91% 68%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 351 95% 71%;
+    --accent-foreground: 0 0% 0%;
+  }@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
+  display: flex;
+  width: fit-content;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
