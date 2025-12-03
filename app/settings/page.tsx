@@ -188,7 +188,14 @@ export default function SettingsPage() {
     e.preventDefault()
     
     try {
+      // Check if user is logged in
+      if (!user || !user.user_id) {
+        alert("Please log in to update your profile")
+        return
+      }
+
       const updateData: any = {
+        user_id: user.user_id,
         first_name: profile.firstName,
         last_name: profile.lastName,
         location: profile.location
@@ -375,13 +382,44 @@ export default function SettingsPage() {
                         <p className="text-xs text-muted-foreground">Email cannot be changed</p>
                       </div>
                       <div className="space-y-2 md:col-span-2">
-                        <Label htmlFor="location">Location</Label>
-                        <Input
-                          id="location"
-                          placeholder="City, Country"
-                          value={profile.location}
-                          onChange={(e) => setProfile({ ...profile, location: e.target.value })}
-                        />
+                        <Label htmlFor="location">Governorate</Label>
+                        <Select 
+                          value={profile.location} 
+                          onValueChange={(value) => setProfile({ ...profile, location: value })}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select Governorate" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="Cairo">Cairo</SelectItem>
+                            <SelectItem value="Giza">Giza</SelectItem>
+                            <SelectItem value="Alexandria">Alexandria</SelectItem>
+                            <SelectItem value="Dakahlia">Dakahlia</SelectItem>
+                            <SelectItem value="Red Sea">Red Sea</SelectItem>
+                            <SelectItem value="Beheira">Beheira</SelectItem>
+                            <SelectItem value="Fayoum">Fayoum</SelectItem>
+                            <SelectItem value="Gharbia">Gharbia</SelectItem>
+                            <SelectItem value="Ismailia">Ismailia</SelectItem>
+                            <SelectItem value="Menofia">Menofia</SelectItem>
+                            <SelectItem value="Minya">Minya</SelectItem>
+                            <SelectItem value="Qaliubiya">Qaliubiya</SelectItem>
+                            <SelectItem value="New Valley">New Valley</SelectItem>
+                            <SelectItem value="Suez">Suez</SelectItem>
+                            <SelectItem value="Aswan">Aswan</SelectItem>
+                            <SelectItem value="Assiut">Assiut</SelectItem>
+                            <SelectItem value="Beni Suef">Beni Suef</SelectItem>
+                            <SelectItem value="Port Said">Port Said</SelectItem>
+                            <SelectItem value="Damietta">Damietta</SelectItem>
+                            <SelectItem value="Sharkia">Sharkia</SelectItem>
+                            <SelectItem value="South Sinai">South Sinai</SelectItem>
+                            <SelectItem value="Kafr El Sheikh">Kafr El Sheikh</SelectItem>
+                            <SelectItem value="Matrouh">Matrouh</SelectItem>
+                            <SelectItem value="Luxor">Luxor</SelectItem>
+                            <SelectItem value="Qena">Qena</SelectItem>
+                            <SelectItem value="North Sinai">North Sinai</SelectItem>
+                            <SelectItem value="Sohag">Sohag</SelectItem>
+                          </SelectContent>
+                        </Select>
                       </div>
                     </div>
 
