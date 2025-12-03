@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { query, queryOne } from '@/lib/utils/db-helpers';
 import { ApiResponse } from '@/lib/types';
 import bcrypt from 'bcryptjs';
@@ -10,26 +8,25 @@ import bcrypt from 'bcryptjs';
  */
 export async function PUT(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const body = await request.json();
+    const { user_id, first_name, last_name, location, password } = body;
 
-    if (!session || !session.user) {
+    // Validate required fields
+    if (!user_id) {
       return NextResponse.json<ApiResponse>(
-        { success: false, error: 'Unauthorized' },
-        { status: 401 }
+        { success: false, error: 'user_id is required' },
+        { status: 400 }
       );
     }
 
-    const userId = (session.user as any).id;
-    const body = await request.json();
-    const { first_name, last_name, location, password } = body;
-
-    // Validate required fields
     if (!first_name || !last_name) {
       return NextResponse.json<ApiResponse>(
         { success: false, error: 'first_name and last_name are required' },
         { status: 400 }
       );
     }
+
+    const userId = user_id;
 
     // Build update query
     let updateQuery = 'UPDATE user SET first_name = ?, last_name = ?';
